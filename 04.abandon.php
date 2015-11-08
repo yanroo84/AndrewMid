@@ -9,13 +9,14 @@
 </head>
 
 <body>
-
+<!--放棄工作-->
 <p>Abandon work</p>
 <hr />
 <?php
 $id=(int)$_GET['id'];
 
 if ($id>0) {
+    //更新案子的狀態,0-可接案，並將承接工作的人去掉回復成NULL
 	$sql = "update work set status=0,whotake=NULL where id=$id;";
 	mysqli_query($conn,$sql) or die("MySQL insert message error"); //執行SQL
 	echo "work abandoned.";
