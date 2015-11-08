@@ -9,14 +9,14 @@
 </head>
 
 <body>
-
+<!--重開被取消工作-->
 <p>Restart work</p>
 <hr />
 <?php
 $id=(int)$_GET['id'];
 
 if ($id>0) {
-	$sql = "update work set status=0 where id=$id;";
+	$sql = "update work set status=0 where id=$id;";//更新案子狀態為可接案(0)
 	mysqli_query($conn,$sql) or die("MySQL insert message error"); //執行SQL
 	echo "work restarted.";
 } else {
