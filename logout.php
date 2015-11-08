@@ -1,5 +1,6 @@
 ﻿<?php
 session_start();
+//清除session
 session_destroy();
 ?>
 <h1>掰~~掰~~~~</h1><hr />
