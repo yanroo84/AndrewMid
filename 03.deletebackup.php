@@ -9,7 +9,7 @@
 </head>
 
 <body>
-
+<!--已被取消的工作-->
 <p>Canceled work list !! </p> 
 <hr />
 <table width="500" border="1">
@@ -22,7 +22,7 @@
     <td> </td>
   </tr>
 <?php
-$sql = "select * from work where status=3 order by id asc;";
+$sql = "select * from work where status=3 order by id asc;";//案子的狀態，3-已取消
 $results=mysqli_query($conn,$sql);
 
 while (	$rs=mysqli_fetch_array($results)) {
