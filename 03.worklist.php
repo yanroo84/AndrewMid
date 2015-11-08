@@ -9,7 +9,7 @@
 </head>
 
 <body>
-
+<!--我的工作清單(包含已接，已完成的工作)-->
 <p>work list !! </p> 
 <hr />
 <table width="600" border="1">
@@ -45,6 +45,15 @@ while (	$rs=mysqli_fetch_array($results)) {
 }
 ?>
 </table>
-<input type ="button" onclick="history.back()" value="回清單"></input>
+<?php
+//雇主和承接人都接工作，所以判斷idtype，來決定他們要返回的清單
+$url='';
+if($_SESSION['idtype'] == 0)
+    $url='02.list1.php';
+if($_SESSION['idtype'] == 1)
+    $url='02.list2.php';
+?>
+<p><a href=<?php echo "$url";?>>回清單</a> </p>
+<!--<input type ="button" onclick="history.back()" value="回清單"></input>  javascript版回上一頁-->
 </body>
 </html>
