@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 08, 2015 at 09:32 PM
+-- Generation Time: Nov 09, 2015 at 12:11 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -39,7 +39,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`id`, `password`, `nickname`, `idtype`) VALUES
 (111, '111', 'Andrew', 0),
-(222, '222', 'Andy', 1);
+(222, '222', 'Andy', 1),
+(333, '333', 'focaaby', 0);
 
 -- --------------------------------------------------------
 
@@ -55,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `work` (
   `status` int(11) NOT NULL,
   `whostart` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `whotake` int(20) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `work`
@@ -64,10 +65,11 @@ CREATE TABLE IF NOT EXISTS `work` (
 INSERT INTO `work` (`id`, `title`, `msg`, `price`, `status`, `whostart`, `whotake`) VALUES
 (1, 'app', 'appappapp欸呸呸', 100, 0, 'Andrew', NULL),
 (2, 'web', 'webwebweb', 222, 1, 'Andrew', 111),
-(3, '333', '333', 333, 0, 'Andrew', NULL),
+(3, '333', '333', 333, 1, 'Andrew', 333),
 (4, '444', '444', 444, 0, 'Andrew', NULL),
 (5, '555', '555', 555, 1, 'Andrew', 222),
-(6, '666', '666', 666, 0, 'Andrew', NULL);
+(6, '666', '666', 666, 0, 'Andrew', NULL),
+(7, '延畢', '把學妹', 999999999, 0, 'focaaby', NULL);
 
 --
 -- Indexes for dumped tables
@@ -87,7 +89,7 @@ ALTER TABLE `work`
 -- AUTO_INCREMENT for table `work`
 --
 ALTER TABLE `work`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
