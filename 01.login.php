@@ -22,6 +22,7 @@ if(isset($_POST['id']) && isset($_POST['pwd'])){//先隱藏錯誤訊息
                 $_SESSION['uID'] = $row['id'];
 				$_SESSION['nick'] = $row['nickname'];
                 $_SESSION['idtype'] = $row['idtype'];
+                //判斷帳號類型，並導至對應頁面
                 if($row['idtype'] == 0)
                     header("Location: 02.list1.php");
                 if($row['idtype'] == 1)
