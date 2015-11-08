@@ -10,7 +10,7 @@
 
 <body>
 
-<p>My work list !! </p> 
+<p>My Job list !! </p> 
 <hr />
 <table width="600" border="1">
   <tr>
@@ -26,12 +26,13 @@
     <td> </td>
   </tr>
 <?php
-$sql = "select * from work order by id asc;";
+//雇主的list頁面
+$sql = "select * from work order by id asc;";//照id排序
 $results=mysqli_query($conn,$sql);
-$whotake="";
+$whotake="";//儲存是否有人接了該工作
 
 while (	$rs=mysqli_fetch_array($results)) {
-    
+    //有人承接工作的話，在承接人那格印出名字
     if($rs['whotake'] != NULL){
         $sql1 = "select nickname from user where id='" . $rs['whotake'] . "';";
         $results1=mysqli_query($conn,$sql1);
@@ -41,7 +42,7 @@ while (	$rs=mysqli_fetch_array($results)) {
     } else {
         $whotake="";
     }
-
+    //案子的狀態
     if($rs['status']==0)
         $rs['status']="可接案";
     else if($rs['status']==1)
@@ -50,7 +51,7 @@ while (	$rs=mysqli_fetch_array($results)) {
         $rs['status']="已完成";
     else if($rs['status']==3)
         $rs['status']="已取消";
-
+    
 	echo "<tr><td>" , $rs['id'] ,
     "</td><td>" , $rs['title'] ,
 	"</td><td>" , $rs['msg'],
