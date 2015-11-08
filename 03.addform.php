@@ -17,7 +17,7 @@
     <td>message</td>
     <td>price</td>
   </tr>
-  <tr><form method="post" action="03.insert.php">
+  <tr><form method="post" action="03.insert.php"><!--POST!!!傳到03.insert-->
     <td><label>
       <input name="title" type="text" id="title" />
     </label></td>
