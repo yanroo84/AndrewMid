@@ -42,5 +42,6 @@ if(isset($_POST['id']) && isset($_POST['pwd'])){//先隱藏錯誤訊息
 <form method="post" action="01.login.php">
 User Name: <input type="text" name="id"><br />
 Password : <input type="password" name="pwd"><br />
-<input type="submit">
+<input type="submit"><br /><br />
+沒有帳號嗎?&nbsp&nbsp&nbsp&nbsp<a href="register.php">註冊</a> 
 </form>
