@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 02, 2015 at 10:46 PM
+-- Generation Time: Nov 08, 2015 at 09:32 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `work` (
 
 INSERT INTO `work` (`id`, `title`, `msg`, `price`, `status`, `whostart`, `whotake`) VALUES
 (1, 'app', 'appappapp欸呸呸', 100, 0, 'Andrew', NULL),
-(2, 'web', 'webwebweb', 222, 0, 'Andrew', NULL),
+(2, 'web', 'webwebweb', 222, 1, 'Andrew', 111),
 (3, '333', '333', 333, 0, 'Andrew', NULL),
 (4, '444', '444', 444, 0, 'Andrew', NULL),
 (5, '555', '555', 555, 1, 'Andrew', 222),
