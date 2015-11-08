@@ -9,7 +9,7 @@
 </head>
 
 <body>
-
+<!--更新編輯後的工作-->
 <p>update work</p>
 <hr />
 <?php
@@ -19,6 +19,7 @@ $msg=mysqli_real_escape_string($conn,$_POST['msg']);
 $price=mysqli_real_escape_string($conn,$_POST['price']);
 
 if ($id>0) {
+    //更新工作標題、內容、價格
 	$sql = "update work set title='$title', msg='$msg', price='$price' where id=$id;";
 	mysqli_query($conn,$sql) or die("MySQL query error"); //執行SQL
 	echo "message updated";
