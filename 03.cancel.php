@@ -9,14 +9,14 @@
 </head>
 
 <body>
-
+<!--取消工作-->
 <p>Cancel work</p>
 <hr />
 <?php
 $id=(int)$_GET['id'];
 
 if ($id>0) {
-	$sql = "update work set status=3 where id=$id;";
+	$sql = "update work set status=3 where id=$id;";//案子的狀態，3-已取消
 	mysqli_query($conn,$sql) or die("MySQL insert message error"); //執行SQL
 	echo "work canceled.";
 } else {
