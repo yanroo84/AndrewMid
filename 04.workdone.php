@@ -9,20 +9,21 @@
 </head>
 
 <body>
-
+<!--回報工作完成-->
 <p>work done</p>
 <hr />
 <?php
 $id=(int)$_GET['id'];
 
 if ($id>0) {
+    //更新工作狀態為已完成(2)
 	$sql = "update work set status=2 where id=$id;";
 	mysqli_query($conn,$sql) or die("MySQL insert message error"); //執行SQL
 	echo "work done.";
 } else {
 	echo "empty id, cannot cancel.";
 }
-header("Refresh:1;url=02.list2.php");
+header("Location: 03.worklist.php");
 ?>
 </body>
 </html>
