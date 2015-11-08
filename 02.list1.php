@@ -42,7 +42,7 @@ while (	$rs=mysqli_fetch_array($results)) {
     } else {
         $whotake="";
     }
-    //案子的狀態
+    //案子的狀態，0-可接案,1-已接案,2-已完成,3-已取消
     if($rs['status']==0)
         $rs['status']="可接案";
     else if($rs['status']==1)
