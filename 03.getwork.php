@@ -23,7 +23,10 @@ if ($id>0) {
 } else {
 	echo "empty id, cannot cancel.";
 }
-header("Location: 03.worklist.php");
+if($_SESSION['idtype'] == 0)
+    header("Location: 02.list1.php");
+if($_SESSION['idtype'] == 1)
+    header("Location: 02.list2.php");
 ?>
 </body>
 </html>
