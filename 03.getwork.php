@@ -23,11 +23,7 @@ if ($id>0) {
 } else {
 	echo "empty id, cannot cancel.";
 }
-//雇主承接人都可以接案，因此判斷idtype，並導回其list頁面
-if($_SESSION['idtype'] == 0)
-    header("Location: 02.list1.php");
-if($_SESSION['idtype'] == 1)
-    header("Location: 02.list2.php");
+header("Location: 03.worklist.php");
 ?>
 </body>
 </html>
