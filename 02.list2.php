@@ -10,7 +10,7 @@
 
 <body>
 
-<p>My work list !! </p> 
+<p>My Job list !! </p> 
 <hr />
 <table width="600" border="1">
   <tr>
@@ -23,7 +23,8 @@
     <td> </td>
   </tr>
 <?php
-$sql = "select * from work where status=0 order by id asc;";
+//承接人的list頁面
+$sql = "select * from work where status=0 order by id asc;";//只能看到可接的工作
 $results=mysqli_query($conn,$sql);
 
 while (	$rs=mysqli_fetch_array($results)) {
