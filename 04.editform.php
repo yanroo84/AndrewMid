@@ -18,6 +18,7 @@
     <td>title</td>
     <td>message</td>
     <td>price</td>
+    <td>deadline</td>
   </tr>
 <?php
 $id=(int)$_GET['id'];
@@ -43,6 +44,9 @@ if ($rs=mysqli_fetch_array($results)) {
     </label></td>
     <td><label>
       <input name="price" type="int" id="price" value=<?php echo $rs['price']; ?>>
+    </label></td>
+    <td><label>
+      <input name="date" type="text" id="date" value=<?php echo $rs['date']; ?>>
     </label></td>
     <td><label>
 	  <input type="submit" name="Submit" value="送出" />

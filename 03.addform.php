@@ -16,6 +16,7 @@
     <td>title</td>
     <td>message</td>
     <td>price</td>
+    <td>deadline</td>
   </tr>
   <tr><form method="post" action="03.insert.php"><!--POST!!!傳到03.insert-->
     <td><label>
@@ -26,6 +27,9 @@
     </label></td>
     <td><label>
       <input name="price" type="int" id="price" />
+    </label></td>
+    <td><label>
+      <input name="date" type="text" id="date" value="2015/11/09" />
     </label></td>
     <td><label>
       <input type="submit" name="Submit" value="送出" />

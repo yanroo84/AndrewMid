@@ -17,10 +17,11 @@ $id=(int)$_POST["id"];
 $title=mysqli_real_escape_string($conn,$_POST['title']);
 $msg=mysqli_real_escape_string($conn,$_POST['msg']);
 $price=mysqli_real_escape_string($conn,$_POST['price']);
+$date=mysqli_real_escape_string($conn,$_POST['date']);
 
 if ($id>0) {
     //更新工作標題、內容、價格
-	$sql = "update work set title='$title', msg='$msg', price='$price' where id=$id;";
+	$sql = "update work set title='$title', msg='$msg', price='$price', date='$date' where id=$id;";
 	mysqli_query($conn,$sql) or die("MySQL query error"); //執行SQL
 	echo "message updated";
     header("Refresh:1;url=02.list1.php");

@@ -12,19 +12,20 @@
 
 <p>My Job list !! </p> 
 <hr />
-<table width="600" border="1">
+<table width="1000" border="1">
   <tr>
     <td>id</td>
     <td>標題</td>
     <td>工作內容</td>
     <td>酬勞</td>
+    <td>完成期限</td>
     <td>工作狀態</td> 
     <td>徵才人</td>
     <td> </td>
   </tr>
 <?php
 //承接人的list頁面
-$sql = "select * from work where status=0 order by id asc;";//只能看到可接的工作
+$sql = "select * from work where status=0 order by price desc;";//只能看到可接的工作
 $results=mysqli_query($conn,$sql);
 
 while (	$rs=mysqli_fetch_array($results)) {
@@ -36,6 +37,7 @@ while (	$rs=mysqli_fetch_array($results)) {
     "</td><td>" , $rs['title'] ,
 	"</td><td>" , $rs['msg'],
 	"</td><td>" , $rs['price'],
+	"</td><td>" , $rs['date'],
 	"</td><td>" , $rs['status'],
 	"</td><td>" , $rs['whostart'],
     "</td><td>" , "<a href='03.getwork.php?id=",$rs['id'] ,"' onclick='return confirm(\"are you sure ?\");'>接案子</a></br>",

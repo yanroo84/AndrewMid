@@ -9,8 +9,8 @@
 </head>
 
 <body>
-<!--我的工作清單(包含已接，已完成的工作)-->
-<p>work list !! </p> 
+<!--完成工作清單-->
+<p>done list !! </p> 
 <hr />
 <table width="600" border="1">
   <tr>
@@ -22,10 +22,9 @@
     <td>工作狀態</td> 
     <td>徵才人</td>
     <td> </td>
-    <td> </td>
   </tr>
 <?php
-$sql = "select * from work where whotake='" . $_SESSION['uID'] . "' and status=1 order by price desc;";
+$sql = "select * from work where whotake='" . $_SESSION['uID'] . "' and (status=2 or status=4) order by price desc;";
 $results=mysqli_query($conn,$sql);
 
 while (	$rs=mysqli_fetch_array($results)) {
@@ -44,8 +43,7 @@ while (	$rs=mysqli_fetch_array($results)) {
 	"</td><td>" , $rs['date'],
 	"</td><td>" , $rs['status'],
 	"</td><td>" , $rs['whostart'],
-    "</td><td>" , "<a href='04.workdone.php?id=",$rs['id'] ,"' onclick='return confirm(\"are you sure ?\");'>完成</a></br>",
-	"</td><td>" , "<a href='04.abandon.php?id=",$rs['id'] ,"' onclick='return confirm(\"are you sure ?\");'>放棄</a></br>","</td></td></tr>";
+    "</td><td>" , "<a href='04.workcheck.php?id=",$rs['id'] ,"' onclick='return confirm(\"are you sure ?\");'>驗收完成</a></br>","</td></td></tr>";
 }
 ?>
 </table>
@@ -57,7 +55,6 @@ if($_SESSION['idtype'] == 0)
 if($_SESSION['idtype'] == 1)
     $url='02.list2.php';
 ?>
-<p><a href=03.donelist.php>完成清單</a> </p>
 <p><a href=<?php echo "$url";?>>回清單</a> </p>
 <!--<input type ="button" onclick="history.back()" value="回清單"></input>  javascript版回上一頁-->
 </body>

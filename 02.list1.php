@@ -12,12 +12,13 @@
 
 <p>My Job list !! </p> 
 <hr />
-<table width="600" border="1">
+<table width="1000" border="1">
   <tr>
     <td>id</td>
     <td>標題</td>
     <td>工作內容</td>
     <td>酬勞</td>
+    <td>完成期限</td>
     <td>工作狀態</td> 
     <td>徵才人</td>
     <td>承接人</td>
@@ -42,7 +43,7 @@ while (	$rs=mysqli_fetch_array($results)) {
     } else {
         $whotake="";
     }
-    //案子的狀態，0-可接案,1-已接案,2-已完成,3-已取消
+    //案子的狀態，0-可接案,1-已接案,2-已完成,3-已取消,4-驗收過
     if($rs['status']==0)
         $rs['status']="可接案";
     else if($rs['status']==1)
@@ -51,11 +52,14 @@ while (	$rs=mysqli_fetch_array($results)) {
         $rs['status']="已完成";
     else if($rs['status']==3)
         $rs['status']="已取消";
+    else if($rs['status']==4)
+        $rs['status']="已完成且驗收";
     
 	echo "<tr><td>" , $rs['id'] ,
     "</td><td>" , $rs['title'] ,
 	"</td><td>" , $rs['msg'],
 	"</td><td>" , $rs['price'],
+	"</td><td>" , $rs['date'],
 	"</td><td>" , $rs['status'],
 	"</td><td>" , $rs['whostart'],
 	"</td><td>" , $whotake,

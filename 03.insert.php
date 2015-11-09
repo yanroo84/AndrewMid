@@ -14,13 +14,14 @@
 <hr />
 <p>
 <?php
-$title=mysqli_real_escape_string($conn,    $_POST['title']   );
+$title=mysqli_real_escape_string($conn,$_POST['title']);
 $msg=mysqli_real_escape_string($conn,$_POST['msg']);
 $price=mysqli_real_escape_string($conn,$_POST['price']);
 $who=mysqli_real_escape_string($conn,$_SESSION['nick']);
+$date=mysqli_real_escape_string($conn,$_POST['date']);
 
 if ($title) {
-	$sql = "insert into work (title, msg, price, whostart) values ('$title', '$msg','$price','$who');";
+	$sql = "insert into work (title, msg, price, whostart,date) values ('$title', '$msg','$price','$who','$date');";
 	mysqli_query($conn,$sql) or die("MySQL insert message error"); //執行SQL
 	echo "work added.";
 header("Refresh:1;url=02.list1.php");
