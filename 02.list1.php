@@ -25,12 +25,14 @@
     <td> </td>
     <td> </td>
     <td> </td>
+    <td>評價 </td>
   </tr>
 <?php
 //雇主的list頁面
 $sql = "select * from work order by id asc;";//照id排序
 $results=mysqli_query($conn,$sql);
 $whotake="";//儲存是否有人接了該工作
+$ra='';
 
 while (	$rs=mysqli_fetch_array($results)) {
     //有人承接工作的話，在承接人那格印出名字
@@ -54,7 +56,17 @@ while (	$rs=mysqli_fetch_array($results)) {
         $rs['status']="已取消";
     else if($rs['status']==4)
         $rs['status']="已完成且驗收";
-    
+
+    //案子的評價，0-好,1-壞
+    if($rs['rate'] != NULL){
+        if($rs['rate']==0)
+            $ra="好";
+        if($rs['rate']==1)
+            $ra="壞";
+    } else {
+        $ra="";
+    }
+
 	echo "<tr><td>" , $rs['id'] ,
     "</td><td>" , $rs['title'] ,
 	"</td><td>" , $rs['msg'],
@@ -66,6 +78,7 @@ while (	$rs=mysqli_fetch_array($results)) {
 	"</td><td>" , "<a href='04.editform.php?id=",$rs['id'] ,"'>編輯</a>",
     "</td><td>" , "<a href='03.cancel.php?id=",$rs['id'] ,"' onclick='return confirm(\"are you sure ?\");'>取消</a></br>",
     "</td><td>" , "<a href='03.getwork.php?id=",$rs['id'] ,"' onclick='return confirm(\"are you sure ?\");'>接案子</a></br>",
+	"</td><td>" , $ra,
     "</td></td></tr>";
 }
 ?>
