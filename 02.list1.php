@@ -84,6 +84,7 @@ while (	$rs=mysqli_fetch_array($results)) {
 ?>
 </table>
 <p><a href="03.addform.php">新增</a> </p>
+<p><a href="05.choose.php">選人</a> </p>
 <p><a href="03.worklist.php">手上的工作</a> </p>
 <p><a href="03.deletebackup.php">工作重開</a> </p>
 <p><a href="logout.php">登出</a> </p>
